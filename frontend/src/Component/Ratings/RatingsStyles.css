@@ -1,0 +1,17 @@
+.ratings-headline12 {
+  font-weight: 800;
+  margin: 3rem 0;
+}
+
+.ratings-list-stocks-list1 {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.ratings-wrapper {
+  background-color: rgb(240, 240, 247);
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+/* Share table css properties with Nasdaq100 */
