@@ -32,8 +32,9 @@
 /* ----- */
 
 .dashboard-wrapper {
-  width: 90vw;
+  max-width: 100rem;
   margin: 0 auto 5rem auto;
+  padding-bottom: 5rem;
 }
 
 .dashboard-flex {
@@ -41,13 +42,14 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0.5rem 10px;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #36364b;
 }
 .dashboard-index-quote {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .dashboard-index-quote .chart-title {
@@ -60,12 +62,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  margin-left: 2rem;
+  margin-left: 7.5rem;
 }
 
 .chart {
   margin: 0 auto;
+  width: 100%;
 }
 
 .dashboard-index-quote .chart-main h2 {
@@ -111,8 +113,13 @@
   font-size: 2.5rem;
   font-weight: 800;
 }
+
+.dashboard-chart-main > h6 {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
 .dashboard-index-quote > h5 {
-  margin: 1rem 10px 0 10px;
+  margin: 0rem 10px 0 10px;
 }
 /* .dashboard-flex h5 {
   margin: 0.25rem 10px;
@@ -144,6 +151,9 @@
 .dashboard-index {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .dashboard-flex h5 {
@@ -154,7 +164,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 1.5rem 10px;
+  margin: 0 10px;
 }
 
 .dashboard-info {
@@ -172,10 +182,28 @@
 }
 
 .dashboard-chart-options {
-  padding-top: 2rem;
   border-top: 1px solid #36364b;
 }
 
 .dashboard-chart-options h6 {
   margin-top: 1rem;
+}
+
+.dashboard-chart-options > .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.select-index,
+.select-interval {
+  width: 100%;
+}
+.select-index {
+  margin-right: 2rem;
+}
+
+.dashboard-chart-main > h1 {
+  font-size: 3rem;
 }

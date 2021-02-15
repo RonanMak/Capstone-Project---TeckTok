@@ -19,7 +19,7 @@ class Chart extends React.Component {
 
     this.state = {
       index: "NDX",
-      interval: "ytd",
+      interval: "d1",
 
       compact: [],
       chart: [],
@@ -60,8 +60,8 @@ class Chart extends React.Component {
 
   drawChart(data) {
     const chart = createChart(this.ref.current, {
-      width: 1234,
-      height: 730,
+      width: 1000,
+      height: 523,
       layout: {
         backgroundColor: "#000000",
         textColor: "#d1d4dc",
@@ -79,6 +79,8 @@ class Chart extends React.Component {
       },
       timeScale: {
         borderVisible: false,
+        timeVisible: true,
+        secondsVisible: false,
       },
       crosshair: {
         horzLine: {
@@ -170,10 +172,10 @@ class Chart extends React.Component {
 
       console.log("Compact:" + compactData + "\nChart:" + chartData);
 
-      // Deep clone
+      // Deep clone, convert the UTC time to EDT
       let realChartData = chartData.map((tick) => {
         let ticker = {};
-        ticker["time"] = tick["time"];
+        ticker["time"] = tick["time"] + 28800000;
         ticker["value"] = tick["close"];
         return ticker;
       });
@@ -272,6 +274,9 @@ class Chart extends React.Component {
                 <h5>
                   <span style={changeFontColor(changePercent)}>{this.state.compact["pctChange"] + "%"}</span>
                 </h5>
+                <h6>
+                  <span>As at {new Date(this.state.compact["lastPriceTime"] + 28800000).toTimeString()}.</span>
+                </h6>
               </div>
             </div>
             <div className="dashboard-chart-title">
@@ -309,17 +314,33 @@ class Chart extends React.Component {
                 <div className="select-index">
                   <h6>Index</h6>
                   <Input type="select" value={this.state.index} onChange={this.changeIndex}>
-                    <option value="ndx">NASDAQ 100</option>
-                    <option value="ccmp">NASDAQ Composite</option>
-                    <option value="spx">S&P 500</option>
-                    <option value="indu">Dow Jones Industrial</option>
-                    <option value="rty">Russell 2000</option>
+                    <optgroup label="-- Main Indices --">
+                      <option value="ndx">NASDAQ 100</option>
+                      <option value="ccmp">NASDAQ Composite</option>
+                      <option value="spx">S&P 500</option>
+                      <option value="indu">Dow Jones Industrial Average</option>
+                      <option value="rty">Russell 2000 Small Cap</option>
+                      <option value="nya">NYSE Composite</option>
+                    </optgroup>
+                    <optgroup label="-- Sector Performance --">
+                      <option value="nbi">NASDAQ BioTech Index</option>
+                      <option value="cutl">NASDAQ Telecom Index</option>
+                      <option value="ndf">NASDAQ Financial Index</option>
+                      <option value="tran">Dow Jones Transportation Average</option>
+                      <option value="util">Dow Jones Utility Average</option>
+                      <option value="mid">S&P 400 Mid Cap Index</option>
+                      <option value="sml">S&P 600 Small Cap Index</option>
+                      <option value="riy">Russell 1000 Big Cap</option>
+                      <option value="ray">Russell 3000 Total Equity</option>
+                    </optgroup>
                   </Input>
                 </div>
 
                 <div className="select-interval">
                   <h6>Interval</h6>
                   <Input type="select" value={this.state.interval} onChange={this.changeInterval}>
+                    <option value="d1">1D</option>
+                    <option value="d3">3D</option>
                     <option value="m1">1M</option>
                     <option value="m3">3M</option>
                     <option value="m6">6M</option>
