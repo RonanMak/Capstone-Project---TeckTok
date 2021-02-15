@@ -125,9 +125,7 @@ export class AddButton extends React.Component {
             {/* <label className="bloglabeltext1">Title:</label> */}
             <h3 className="blogsearchtext1">
               {" "}
-              {!this.state.searchbarInput
-                ? "Content"
-                : `Search result for ${this.state.searchbarInput}`}
+              {!this.state.searchbarInput ? "Content" : `Search result for ${this.state.searchbarInput}`}
             </h3>
             <br />
             <div>
@@ -153,13 +151,7 @@ export class AddButton extends React.Component {
             </div>
             <br />
             <div>
-              <Button
-                className="blogsubbut"
-                color="primary"
-                onClick={this.addBlog}
-                size="medium"
-                variant="contained"
-              >
+              <Button className="blogsubbut" color="primary" onClick={this.addBlog} size="medium" variant="contained">
                 POST
               </Button>
             </div>
@@ -171,11 +163,7 @@ export class AddButton extends React.Component {
             {this.props.blogs
               ? this.props.blogs.map((blog, i) => {
                   return (
-                    <div
-                      key={i}
-                      id={blog.id}
-                      className="p-3 my-2 rounded bg-docs-transparent-grid"
-                    >
+                    <div key={i} id={blog.id} className="p-3 my-2 rounded bg-docs-transparent-grid">
                       <Toast>
                         <ToastHeader>
                           <div className="blogheadline">
@@ -190,9 +178,8 @@ export class AddButton extends React.Component {
 
                         <div className="App">
                           <Button
-                            color="primary"
                             size="medium"
-                            variant="contained"
+                            variant="outlined"
                             className="toggle-button"
                             id="centered-toggle-button"
                             onClick={() => {

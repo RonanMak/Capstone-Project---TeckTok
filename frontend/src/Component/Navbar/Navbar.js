@@ -53,7 +53,7 @@ export class Navbar extends React.Component {
                   </div>
                   <div className="right-elements">
                     <p>
-                      Welcome back ! <span>{this.userName}</span>.
+                      Welcome back! <span>{this.userName}</span>.
                     </p>
                     <Button
                       style={{ backgroundColor: "#36364b", fontWeight: 600 }}
@@ -68,11 +68,7 @@ export class Navbar extends React.Component {
                     </Button>
                   </div>
                 </div>
-                <nav
-                  className={
-                    this.state.sidebar ? "nav-menu active" : "nav-menu"
-                  }
-                >
+                <nav className={this.state.sidebar ? "nav-menu active" : "nav-menu"}>
                   <ul className="nav-menu-items" onClick={this.showSidebar}>
                     <li className="navbar-toggle">
                       <h1>TECHTOK</h1>

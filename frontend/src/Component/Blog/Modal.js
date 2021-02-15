@@ -19,9 +19,7 @@ class Modal extends React.Component {
 
     console.log(this.props.blogs);
     console.log(this.props.something);
-    const singleBlogArray = this.props.blogs.filter(
-      (blog) => blog.id === this.props.something
-    );
+    const singleBlogArray = this.props.blogs.filter((blog) => blog.id === this.props.something);
     const signleBlog = singleBlogArray[0];
     this.setState({
       headline: signleBlog.headline,
@@ -60,17 +58,11 @@ class Modal extends React.Component {
         <div className="p-3 my-2 rounded bg-docs-transparent-grid">
           <div className="modal-content">
             <label>Headline</label>
-            <textarea
-              value={this.state.headline}
-              onChange={this.onHeadlineChange}
-            ></textarea>
+            <textarea value={this.state.headline} onChange={this.onHeadlineChange}></textarea>
           </div>
           <div className="modal-content">
             <label>Content</label>
-            <textarea
-              value={this.state.content}
-              onChange={this.onContentChange}
-            ></textarea>
+            <textarea value={this.state.content} onChange={this.onContentChange}></textarea>
           </div>
         </div>
 
