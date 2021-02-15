@@ -4,6 +4,8 @@ A tech stock info site for beginners.
 
 Start thinking and researching stocks. Simply Technically.
 
+https://techtok.xyz/
+
 ## Introduction
 
 Work by [Ronan Mak](https://github.com/RonanMak) and Roydon Lee.
