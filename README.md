@@ -4,6 +4,7 @@ A tech stock info site for beginners.
 
 Start thinking and researching stocks. Simply Technically.
 
+TechTok:
 https://techtok.xyz/
 
 ## Introduction
